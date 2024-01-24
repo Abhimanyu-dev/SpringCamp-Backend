@@ -6,7 +6,7 @@ const wingiesOrNot = require("./WingiesOrNot")
 const roommate = require("./roommate")
 const wingies = require("./wingmates")
 
-
+const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(express.json())
@@ -44,6 +44,6 @@ app.use((req, res) => {
     res.status(400).json({error: "No such page"})
 })
  
-app.listen(4000, () => {
-    console.log("Listening on port 4000")
+app.listen(PORT, () => {
+    console.log("Listening on port", PORT)
 })
